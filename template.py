@@ -25,4 +25,5 @@ from heapq import heappop, heappush, heapify # ヒープqueue(優先度付きque
 ALPH = "abcdefghijklmnopqrstuvwxyz"
 PI = 3.14159265358979323846264338
 
+# 事前にAI等で作成したものは https://github.com/oYAs-me/abc に記載
 
