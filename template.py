@@ -3,6 +3,7 @@ import sys
 input = sys.stdin.readline
 def mapin(): return map(int, input().split())
 def listin(): return list(map(int, input().split()))
+def listin0indexed(): return [0] + list(map(int, input().split()))
 def intin(): return int(input())
 def strin(): return input().rstrip() # \nを除去
 def printerr(*args, sep=' ', end='\n'): print(*args, sep=sep, end=end, file=sys.stderr) # 標準エラー出力

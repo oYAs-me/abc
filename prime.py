@@ -49,7 +49,7 @@ def eratosthenes_sieve(n: int) -> tuple[list[int], bytearray]:
      -> bytearray[i] == 1 のとき i は素数
     """
     if n < 2:
-        return []
+        return tuple([],)
 
     # 1バイトの配列で素数フラグを管理 (0: 合成数, 1: 素数)
     is_prime = bytearray([1]) * (n + 1)
