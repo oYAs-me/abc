@@ -32,9 +32,13 @@ sys.setrecursionlimit(10**6)
 def yn(b: bool):
     """True/Falseの出力をYes/Noに変換する関数"""
     return 'Yes' if b else 'No'
-def get_top_k(arr: VectorLike_Iterable[TYPE], key_func: Callable[[TYPE], Any], top_k: int = 1) -> list[TYPE]:
-    """Counterの中で、`key_func`に従ってソートしたときの上位`top_k`個のkeyを返す\\
-    大きいに取得する場合は`key_func`をそのままでOK"""
+def get_top_k_largest(arr: VectorLike_Iterable[TYPE], key_func: Callable[[TYPE], Any], top_k: int = 1) -> list[TYPE]:
+    """Counterの中で、`key_func`に従ってソートしたときの値上位`top_k`個のkeyを返す\\
+    (idx(昇順), val(降順))の`key_func`の例: `lambda x: (-x[0], x[1])`"""
+    return nlargest(top_k, arr, key=key_func)
+def get_top_k_smallest(arr: VectorLike_Iterable[TYPE], key_func: Callable[[TYPE], Any], top_k: int = 1) -> list[TYPE]:
+    """Counterの中で、`key_func`に従ってソートしたときの値下位`top_k`個のkeyを返す\\
+    (idx(昇順), val(降順))の`key_func`の例: `lambda x: (x[0], -x[1])`"""
     return nsmallest(top_k, arr, key=key_func)
 
 # 定数等
